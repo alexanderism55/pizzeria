@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reservations",
+  "info": {
+    "singularName": "reservation",
+    "pluralName": "reservations",
+    "displayName": "reservation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "time": {
+      "type": "datetime"
+    },
+    "pizzas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pizza.pizza",
+      "mappedBy": "reservation"
+    }
+  }
+}
