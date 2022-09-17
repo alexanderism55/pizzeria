@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "doughs",
+  "info": {
+    "singularName": "dough",
+    "pluralName": "doughs",
+    "displayName": "dough"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "pizzas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pizza.pizza",
+      "mappedBy": "dough"
+    }
+  }
+}

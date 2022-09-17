@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pizzas",
+  "info": {
+    "singularName": "pizza",
+    "pluralName": "pizzas",
+    "displayName": "pizza",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "size": {
+      "type": "string"
+    },
+    "restaurants": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::restaurant.restaurant",
+      "mappedBy": "pizzas"
+    },
+    "toppings": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::topping.topping",
+      "inversedBy": "pizzas"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "dough": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::dough.dough",
+      "inversedBy": "pizzas"
+    },
+    "reservation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::reservation.reservation",
+      "inversedBy": "pizzas"
+    }
+  }
+}
